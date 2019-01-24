@@ -108,11 +108,11 @@ namespace HW0Completed.Steps
                 _driver.FindElement(By.Id("other")).Clear();
                 _driver.FindElement(By.Id("other")).SendKeys(additional);
 
-                string phone = RandomGenerateNumber(2).ToString() + " " + RandomGenerateNumber(9).ToString();
+                string phone = "+" + RandomGenerateNumber(2).ToString() + " " + RandomGenerateNumber(9).ToString();
                 _driver.FindElement(By.Id("phone")).Clear();
                 _driver.FindElement(By.Id("phone")).SendKeys(phone);
 
-                string mphone = RandomGenerateNumber(2).ToString() + " " + RandomGenerateNumber(9).ToString();
+                string mphone = "+" + RandomGenerateNumber(2).ToString() + " " + RandomGenerateNumber(9).ToString();
                 _driver.FindElement(By.Id("phone_mobile")).Clear();
                 _driver.FindElement(By.Id("phone_mobile")).SendKeys(mphone);
 
