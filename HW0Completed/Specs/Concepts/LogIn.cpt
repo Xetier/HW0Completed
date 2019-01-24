@@ -1,0 +1,10 @@
+﻿#LogIn with email <email> and password <pswd>
+
+* Go to "http://automationpractice.com/index.php"
+* Click to button SingIn 
+* Fill email with <email>
+* Fill password with <pswd>
+* Click Sign in button
+* Check proper username is shown in the header with "FirstName LastName"
+* Check my account page contains "?controller=my-account"
+* Check Log out action is available showing "Sign out"

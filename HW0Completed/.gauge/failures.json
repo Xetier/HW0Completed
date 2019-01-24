@@ -1,0 +1,10 @@
+{
+	"Args": [
+		"run",
+		"-t",
+		"checkoutspec"
+	],
+	"FailedItems": [
+		"specs\\Checkout.spec:5"
+	]
+}
