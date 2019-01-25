@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace HW0Completed.Steps.Pages
 {
-    public class LogInPage
+    class LogInPage
     {
         public IWebDriver _driver = Hooks.WebDriver;
 

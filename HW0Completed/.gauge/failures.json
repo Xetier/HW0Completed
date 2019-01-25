@@ -2,7 +2,7 @@
 	"Args": [
 		"run",
 		"-t",
-		"signinspec"
+		"loginfilespec"
 	],
 	"FailedItems": []
 }

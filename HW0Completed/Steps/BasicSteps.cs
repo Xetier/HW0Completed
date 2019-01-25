@@ -16,8 +16,8 @@ namespace HW0Completed.Steps.Pages
         [Step("Go to <url>")]
         public void GoToAutomationpractice(string url)
         {
-            _driver.Navigate().GoToUrl(url);
             _driver.Manage().Window.Maximize();
+            _driver.Navigate().GoToUrl(url);
         }
 
         [Step("Click to button SingIn")]
