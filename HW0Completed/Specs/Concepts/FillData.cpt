@@ -1,0 +1,21 @@
+﻿#Fill all fields with correct data
+
+* Click on Mr
+* Fill first name in customer_firstname field
+* Fill last name in customer_lastname field
+* Fill password in passwd field
+* Pick day in birthday day combobox
+* Pick month in birthday month combobox
+* Pick year in birthday year combobox
+* Check Sign up for our newsletter! and Receive special offers from our partners!
+* Fill Company name in company field
+* Fill first address in Address1 field
+* Fill second address in Address2 field
+* Fill city in City field
+* Pick state in state combobox
+* Fill post code in postcode field
+* Pick country in country combobox
+* Fill additional information in other field
+* Fill phone in phone field
+* Fill mobile phone in mobile phone field
+* Fill Address in alias field

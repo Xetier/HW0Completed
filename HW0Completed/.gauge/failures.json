@@ -2,9 +2,7 @@
 	"Args": [
 		"run",
 		"-t",
-		"checkoutspec"
+		"signinspec"
 	],
-	"FailedItems": [
-		"specs\\Checkout.spec:5"
-	]
+	"FailedItems": []
 }

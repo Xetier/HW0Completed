@@ -2,5 +2,5 @@
 	"gauge",
 	"run",
 	"-t",
-	"checkoutspec"
+	"signinspec"
 ]

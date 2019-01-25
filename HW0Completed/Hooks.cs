@@ -2,6 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,16 +31,23 @@ namespace HW0Completed
             }
             
             _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(timeout);
+            Log.Logger = new LoggerConfiguration().MinimumLevel.Debug().WriteTo.File("logs\\myapp.txt", rollingInterval: RollingInterval.Day).CreateLogger();
         }
 
         [AfterSuite]
         public void AfterSuite()
         {
             _driver?.Quit();
+            TakeScreenShot();
         }
         public static IWebDriver WebDriver
         {
             get { return _driver; }
+        }
+
+        public void TakeScreenShot()
+        {
+            Console.WriteLine("TAKE SCREENSHOT");
         }
     }
 }

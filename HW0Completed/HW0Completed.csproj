@@ -69,6 +69,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Steps\CheckoutSteps.cs" />
     <Compile Include="Steps\BasicSteps.cs" />
+    <Compile Include="Steps\Pages\FillData.cs" />
     <Compile Include="Steps\Pages\LogInPage.cs" />
     <Compile Include="Steps\SignIn.cs" />
   </ItemGroup>
@@ -76,6 +77,7 @@
     <None Include="Env\default\default.properties" />
     <None Include="packages.config" />
     <None Include="Specs\Checkout.spec" />
+    <None Include="Specs\Concepts\FillData.cpt" />
     <None Include="Specs\Concepts\LogIn.cpt" />
     <None Include="Specs\SignIn.spec" />
   </ItemGroup>
