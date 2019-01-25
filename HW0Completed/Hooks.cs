@@ -13,7 +13,8 @@ namespace HW0Completed
 {
     public class Hooks
     {
-        const int timeout = 60;
+        
+        int timeout;
         public static IWebDriver _driver;
 
         [BeforeSuite]
@@ -21,6 +22,9 @@ namespace HW0Completed
         {
             string browser = Environment.GetEnvironmentVariable("browser");
             Console.WriteLine(browser);
+            
+            Console.WriteLine(timeout.ToString());
+
             if (browser.Equals("chrome"))
             {
                 _driver = new ChromeDriver();
@@ -48,6 +52,12 @@ namespace HW0Completed
         public void TakeScreenShot()
         {
             Console.WriteLine("TAKE SCREENSHOT");
+        }
+
+        public Hooks()
+        {
+            string x = Environment.GetEnvironmentVariable("timeout");
+            timeout = Convert.ToInt32(x);
         }
     }
 }
