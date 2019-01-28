@@ -1,4 +1,5 @@
 ﻿using Cignium.Contrib.GaugeSelenium;
+using Cignium.Contrib.GaugeSelenium.Impl;
 using FluentAssertions;
 using Gauge.CSharp.Lib.Attribute;
 using OpenQA.Selenium;
@@ -24,8 +25,7 @@ namespace HW0Completed.Steps.Pages
         [Step("Click to button SingIn")]
         public void ClickToButtonSingIn()
         {
-            var buttonSingIn = _driver.FindElement(By.ClassName("login"));
-            buttonSingIn.Click();
+            _driver.FindElementBy("Class", "login").Click();            
         }
 
         [Step("Check my account page contains <urlSubString>")]
@@ -37,7 +37,7 @@ namespace HW0Completed.Steps.Pages
         [Step("Check Log out action is available showing <expectedT>")]
         public void CheckLogOut(string expectedT)
         {
-            _driver.FindElement(By.ClassName("logout")).Text.Should().Be(expectedT);
+            _driver.FindElementBy("Class", "logout").Text.Should().Be(expectedT);
         }
 
     }

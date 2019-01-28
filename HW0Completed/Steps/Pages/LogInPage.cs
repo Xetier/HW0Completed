@@ -1,4 +1,5 @@
 ﻿using Cignium.Contrib.GaugeSelenium;
+using Cignium.Contrib.GaugeSelenium.Impl;
 using FluentAssertions;
 using Gauge.CSharp.Lib.Attribute;
 using HW0Completed;
@@ -19,27 +20,34 @@ namespace HW0Completed.Steps.Pages
         [Step("Fill email with <email>")]
         public void FillEmail(string email)
         {
-            _driver.FindElement(By.Id("email")).Clear();
-            _driver.FindElement(By.Id("email")).SendKeys(email);
+            SendDataString("Id", "email", email);
         }
 
         [Step("Fill password with <pswrd>")]
         public void FillPassword(string pswrd)
         {
-            _driver.FindElement(By.Id("passwd")).Clear();
-            _driver.FindElement(By.Id("passwd")).SendKeys(pswrd);
+            SendDataString("Id", "passwd", pswrd);
         }
 
         [Step("Click Sign in button")]
         public void ClickSignIn()
         {
-            _driver.FindElement(By.Id("SubmitLogin")).Click();
+            _driver.FindElementBy("Id", "SubmitLogin").Click();
         }
 
         [Step("Check proper username is shown in the header with <expectedT>")]
         public void CheckProperUsername(string expectedT)
         {
-            _driver.FindElement(By.ClassName("account")).Text.Should().Be(expectedT);
+            _driver.FindElementBy("Class", "account").Text.Should().Be(expectedT);
+        }
+
+        public static void SendDataString(string type, string selectorValue, string data)
+        {
+            IWebDriver _driver = Hooks.WebDriver;
+
+            var element = _driver.FindElementBy(type, selectorValue);
+            element.Clear();
+            element.SendKeys(data);
         }
     }
 }

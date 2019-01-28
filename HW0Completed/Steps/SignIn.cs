@@ -1,4 +1,5 @@
 ﻿using Cignium.Contrib.GaugeSelenium;
+using Cignium.Contrib.GaugeSelenium.Impl;
 using FluentAssertions;
 using Gauge.CSharp.Lib.Attribute;
 using OpenQA.Selenium;
@@ -21,28 +22,37 @@ namespace HW0Completed.Steps
         [Step("Fill Email address to create an account")]
         public void FillEmailAddress()
         {
-            _driver.FindElement(By.Id("email_create")).Clear();
+            
             string emailKey = RandomGenerate(10).ToString() + "@" + RandomGenerate(5).ToString() + ".com";
-            _driver.FindElement(By.Id("email_create")).SendKeys(emailKey);
+            SendDataString("Id", "email_create", emailKey);
             Log.Information("email: " + emailKey);
         }
 
         [Step("Click Create an account")]
         public void ClickCreateAnAccount()
         {
-            _driver.FindElement(By.Id("SubmitCreate")).Click();
+            _driver.FindElementBy("Id", "SubmitCreate").Click();
         }
 
         [Step("Click Register button")]
         public void ClickOnButtonRegister()
         {
-            _driver.FindElement(By.Id("submitAccount")).Click();
+            _driver.FindElementBy("Id", "submitAccount").Click();
         }
 
         public static string RandomGenerate(int length)
         {
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrsqtuvwxyz";
             return new string(Enumerable.Repeat(chars, length).Select(s => s[random.Next(s.Length)]).ToArray());
+        }
+
+        public static void SendDataString(string type, string selectorValue, string data)
+        {
+            IWebDriver _driver = Hooks.WebDriver;
+
+            var element = _driver.FindElementBy(type, selectorValue);
+            element.Clear();
+            element.SendKeys(data);
         }
     }
 }

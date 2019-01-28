@@ -1,4 +1,5 @@
 ﻿using Cignium.Contrib.GaugeSelenium;
+using Cignium.Contrib.GaugeSelenium.Impl;
 using FluentAssertions;
 using Gauge.CSharp.Lib.Attribute;
 using OpenQA.Selenium;
@@ -33,21 +34,28 @@ namespace HW0Completed.Steps
         [Step("Fill email")]
         public void FillEmail()
         {
-            _driver.FindElement(By.Id("email")).Clear();
-            _driver.FindElement(By.Id("email")).SendKeys(email);
+            SendDataString("Id", "email", email);
         }
 
         [Step("Fill password")]
         public void FillPassword()
         {
-            _driver.FindElement(By.Id("passwd")).Clear();
-            _driver.FindElement(By.Id("passwd")).SendKeys(passwd);
+            SendDataString("Id", "passwd", passwd);
         }
 
         [Step("Check proper username is shown in the header")]
         public void CheckProperUsername()
         {
-            _driver.FindElement(By.ClassName("account")).Text.Should().Be(fullName);
+            _driver.FindElementBy("Class", "account").Text.Should().Be(fullName);
+        }
+
+        public static void SendDataString(string type, string selectorValue, string data)
+        {
+            IWebDriver _driver = Hooks.WebDriver;
+
+            var element = _driver.FindElementBy(type, selectorValue);
+            element.Clear();
+            element.SendKeys(data);
         }
     }
 }

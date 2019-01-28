@@ -169,7 +169,7 @@ namespace HW0Completed.Steps.Pages
         public void CheckProperUsername()
         {
             string expectedT = firstName + " " + lastName;
-            _driver.FindElement(By.ClassName("account")).Text.Should().Be(expectedT);
+            _driver.FindElementBy("Class", "account").Text.Should().Be(expectedT); 
         }
 
         public static string RandomGenerateNumber(int length)
