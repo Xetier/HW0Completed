@@ -1,4 +1,5 @@
-﻿using FluentAssertions;
+﻿using Cignium.Contrib.GaugeSelenium;
+using FluentAssertions;
 using Gauge.CSharp.Lib.Attribute;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
