@@ -15,17 +15,28 @@ namespace HW0Completed.Steps.Pages
 {
     class FillData
     {
-        IWebDriver _driver = Hooks.WebDriver;
 
         public static readonly Random random = new Random();
         public string firstName = RandomGenerate(10).ToString();
         public string lastName = RandomGenerate(10).ToString();
 
+        public IWebDriver _driver = Hooks.WebDriver;
+
+
         [Step("Click on Mr")]
         public void ClickOnMr()
         {
-            var id_gender = random.Next(0, 2);
-            _driver.FindElements(By.Name("id_gender"))[id_gender].Click();
+            try
+            {
+                int id_gender = random.Next(1, 3);
+                _driver.FindElementBy("Id", "uniform-id_gender" + id_gender.ToString()).Click();
+                _driver.SaveScreenShot();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Message: " + ex.Message);
+            }
+            
         }
 
         [Step("Fill first name in customer_firstname field")]

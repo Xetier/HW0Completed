@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Cignium.Contrib.GaugeSelenium, Version=1.0.14.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Cignium.Contrib.GaugeSelenium.1.0.23\lib\net461\Cignium.Contrib.GaugeSelenium.dll</HintPath>
+      <HintPath>..\packages\Cignium.Contrib.GaugeSelenium.1.0.25\lib\net461\Cignium.Contrib.GaugeSelenium.dll</HintPath>
     </Reference>
     <Reference Include="FluentAssertions, Version=5.6.0.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
       <HintPath>..\packages\FluentAssertions.5.6.0\lib\net45\FluentAssertions.dll</HintPath>
@@ -83,6 +83,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Steps\CheckoutSteps.cs" />
     <Compile Include="Steps\BasicSteps.cs" />
+    <Compile Include="Steps\Hooks.cs" />
     <Compile Include="Steps\LogInFile.cs" />
     <Compile Include="Steps\Pages\FillData.cs" />
     <Compile Include="Steps\Pages\LogInPage.cs" />

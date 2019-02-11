@@ -1,5 +1,6 @@
 [
 	"gauge",
 	"run",
-	"-p"
+	"-t",
+	"signinspec"
 ]

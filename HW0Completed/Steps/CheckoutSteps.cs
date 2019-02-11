@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace HW0Completed.Steps
 {
-    class CheckoutSteps 
+    class CheckoutSteps
     {
         public IWebDriver _driver = Hooks.WebDriver;
 
@@ -56,7 +56,9 @@ namespace HW0Completed.Steps
         [Step("Click by Terms of service to agree")]
         public void ClickByTSA()
         {
-            _driver.FindElementBy("Id", "cgv").Click();
+            _driver.SaveScreenShot();
+            _driver.FindElementBy("Id", "uniform-cgv").Click();
+            _driver.SaveScreenShot();
         }
 
         [Step("Click Proceed to checkout3")]
